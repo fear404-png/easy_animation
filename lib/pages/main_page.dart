@@ -37,15 +37,20 @@ class _MainPageState extends State<MainPage> {
                   hp = 100;
                 }
               }),
+
+              //Создание анимации нажатия
+              //Обработчик когда кнопка нажата
               onTapDown: (details) => setState(() {
                 readyColor = Colors.white;
                 eyesSize = 0.5;
               }),
+              //Обработчик когда отжали кнопку
               onTapUp: (details) => setState(() {
                 readyColor = Colors.red;
                 eyesSize = 1;
               }),
 
+              //кнопка
               child: GameStartButton(
                 isReady: isReady,
                 readyColor: readyColor,
