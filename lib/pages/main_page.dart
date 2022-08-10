@@ -14,6 +14,8 @@ class _MainPageState extends State<MainPage> {
   //Булевое значения благодаря которому мы будем менять состояние
   bool isReady = false;
   double hp = 100;
+  Color readyColor = Colors.red;
+  double eyesSize = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -35,8 +37,20 @@ class _MainPageState extends State<MainPage> {
                   hp = 100;
                 }
               }),
+              onTapDown: (details) => setState(() {
+                readyColor = Colors.white;
+                eyesSize = 0.5;
+              }),
+              onTapUp: (details) => setState(() {
+                readyColor = Colors.red;
+                eyesSize = 1;
+              }),
 
-              child: GameStartButton(isReady: isReady),
+              child: GameStartButton(
+                isReady: isReady,
+                readyColor: readyColor,
+                eyesSize: eyesSize,
+              ),
             ),
           ],
         ),

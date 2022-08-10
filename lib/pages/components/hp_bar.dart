@@ -19,7 +19,6 @@ class HpBarWidget extends StatelessWidget {
         children: [
           AnimatedContainer(
             duration: const Duration(milliseconds: 500),
-            curve: Curves.bounceOut,
             decoration: BoxDecoration(
                 border: Border.all(
                     color: isReady ? Colors.red : Colors.black.withOpacity(0))),

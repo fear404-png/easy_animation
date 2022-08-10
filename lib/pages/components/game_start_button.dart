@@ -8,9 +8,13 @@ class GameStartButton extends StatelessWidget {
   const GameStartButton({
     super.key,
     required this.isReady,
+    required this.readyColor,
+    required this.eyesSize,
   });
 
   final bool isReady;
+  final Color readyColor;
+  final double eyesSize;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +22,7 @@ class GameStartButton extends StatelessWidget {
       decoration: BoxDecoration(
 
           //В зависиммости от значения 'isReady' показываем тот или иной цвет
-          color: isReady ? Colors.red : Colors.black,
+          color: isReady ? readyColor : Colors.black,
 
           //Здесь тоже самое, только превращаем круг в квадрат и наоборот
           borderRadius: BorderRadius.all(Radius.circular(isReady ? 0 : 50))),
@@ -38,7 +42,10 @@ class GameStartButton extends StatelessWidget {
           //Это наш текст который трансформируется в типо волосы
           TextAndHairWidget(isReady: isReady),
           //Это глазки ))
-          EyesWidget(isReady: isReady),
+          EyesWidget(
+            isReady: isReady,
+            eyesSize: eyesSize,
+          ),
           //рот
           MouthWidget(isReady: isReady)
         ],

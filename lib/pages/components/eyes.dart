@@ -4,9 +4,11 @@ class EyesWidget extends StatelessWidget {
   const EyesWidget({
     super.key,
     required this.isReady,
+    required this.eyesSize,
   });
 
   final bool isReady;
+  final double eyesSize;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class EyesWidget extends StatelessWidget {
           turns: const AlwaysStoppedAnimation(15 / 360),
           child: AnimatedContainer(
               width: 30,
-              height: isReady ? 20 : 0,
+              height: isReady ? 20 * eyesSize : 0,
               color: Colors.black,
               curve: Curves.easeIn,
               duration: const Duration(milliseconds: 200)),
@@ -29,7 +31,7 @@ class EyesWidget extends StatelessWidget {
           turns: const AlwaysStoppedAnimation(-15 / 360),
           child: AnimatedContainer(
               width: 30,
-              height: isReady ? 20 : 0,
+              height: isReady ? 20 * eyesSize : 0,
               color: Colors.black,
               curve: Curves.easeIn,
               duration: const Duration(milliseconds: 200)),
