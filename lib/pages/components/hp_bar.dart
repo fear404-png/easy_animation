@@ -29,8 +29,8 @@ class HpBarWidget extends StatelessWidget {
           Align(
             alignment: Alignment.centerLeft,
             child: AnimatedContainer(
-              duration: const Duration(milliseconds: 500),
-              curve: Curves.easeInCubic,
+              duration: const Duration(milliseconds: 100),
+              curve: Curves.easeInExpo,
               color: Colors.red,
               height: 10,
               width: isReady ? hp : 0,

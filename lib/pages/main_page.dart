@@ -1,4 +1,3 @@
-
 import 'package:easy_animation/pages/components/hp_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -30,8 +29,11 @@ class _MainPageState extends State<MainPage> {
             GestureDetector(
               //Обрабатываем нажатие
               onTap: () => setState(() {
-                //Именяем булевое значение на противоположное себе
-                isReady = !isReady;
+                !isReady ? isReady = true : hp -= 10;
+                if (hp <= 0) {
+                  isReady = false;
+                  hp = 100;
+                }
               }),
 
               child: GameStartButton(isReady: isReady),
