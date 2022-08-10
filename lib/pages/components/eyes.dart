@@ -20,7 +20,7 @@ class EyesWidget extends StatelessWidget {
               height: isReady ? 20 : 0,
               color: Colors.black,
               curve: Curves.easeIn,
-              duration: const Duration(milliseconds: 150)),
+              duration: const Duration(milliseconds: 200)),
         ),
         const SizedBox(
           width: 20,
