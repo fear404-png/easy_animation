@@ -1,3 +1,5 @@
+import 'package:easy_animation/pages/components/eyes.dart';
+import 'package:easy_animation/pages/components/text_and_hair.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -42,13 +44,14 @@ class _MainPageState extends State<MainPage> {
           //Это по какой кривой будет воспроизводится анимация, вариаций много
           curve: Curves.easeOutBack,
 
-          //Анимируемый алигн xD
-          //Тут все так-же, в зависиммости от значения isReady мы задаем тот или иной параметр
-          child: AnimatedAlign(
-              alignment: isReady ? Alignment.topCenter : Alignment.center,
-              duration: const Duration(milliseconds: 150),
-              curve: Curves.easeOutBack,
-              child: Text(isReady ? "||||" : "START")),
+          child: Stack(
+            children: [
+              //Это наш текст который трансформируется в типо волосы
+              TextAndHairWidget(isReady: isReady),
+              //Это глазки ))
+              EyesWidget(isReady: isReady),
+            ],
+          ),
         ),
       )),
     );
